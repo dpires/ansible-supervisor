@@ -1,0 +1,10 @@
+---
+install_pip: true
+
+supervisor_name: supervisord
+supervisor_log_dir: /var/log/supervisor
+supervisor_config_dir: /etc/supervisor
+supervisor_conf_dir: /etc/supervisor/conf.d
+supervisor_pid_dir: /var/run
+
+

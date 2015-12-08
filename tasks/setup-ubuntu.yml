@@ -1,0 +1,5 @@
+  - name: Copy supervisor init
+    template: >
+      src=supervisor.init
+      dest="/etc/init.d/supervisor"
+      mode=0755

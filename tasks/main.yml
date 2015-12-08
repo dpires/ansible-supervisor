@@ -1,0 +1,26 @@
+---
+  - name: Install supervisor
+    pip: name=supervisor state=latest
+
+  - name: Create supervisor directories
+    file: >
+      state=directory
+      path={{ item }}
+      mode=0755
+    with_items:
+      - "{{ supervisor_config_dir }}"
+      - "{{ supervisor_conf_dir }}"
+      - "{{ supervisor_log_dir }}"
+
+  - name: Copy supervisor conf
+    template: >
+      src=supervisor.conf
+      dest="{{ supervisor_config_dir }}/{{ supervisor_name }}.conf" 
+      mode=0755
+
+  - name: Create /etc/supervisord.conf -> /etc/supervisor/supervisor.conf symlink
+    file: src="{{ supervisor_config_dir }}/{{ supervisor_name }}.conf" dest="/etc/{{ supervisor_name }}.conf" state=link
+
+  - include: setup-ubuntu.yml
+    when: ansible_distribution == 'Ubuntu' 
+

@@ -1,0 +1,16 @@
+---
+galaxy_info:
+  author: David Pires
+  description: An Ansible role for supervisor
+  company: N/A
+  license: MIT
+  min_ansible_version: 1.2
+  platforms:
+  - name: Ubuntu
+    versions:
+    - precise
+    - trusty
+  categories:
+  - system
+dependencies:
+  - { role: dpires.pip, when: install_pip == true }
