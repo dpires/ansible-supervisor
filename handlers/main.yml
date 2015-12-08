@@ -1,2 +1,12 @@
 ---
-# handlers file for ansible-supervisor
+- name: Restart supervisor
+  service: name={{ supervisor_name }} state=restarted
+
+- name: Start supervisor
+  service: name={{ supervisor_name }} state=started
+
+- name: Stop supervisor
+  service: name={{ supervisor_name }} state=stopped
+
+- name: Reread supervisorctl
+  command: supervisorctl reread
