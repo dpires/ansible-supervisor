@@ -21,7 +21,11 @@
   - name: Create /etc/supervisord.conf symlink for supervisorctl to work with -c
     file: src="{{ supervisor_config_dir }}/{{ supervisor_name }}.conf" dest="/etc/supervisord.conf" state=link
 
-  - include: setup-ubuntu.yml
+  - include: Debian.yml
     notify: Start supervisor
-    when: ansible_distribution == 'Ubuntu' 
+    when: ansible_os_family == 'Debian' 
+
+  - include: RedHat.yml
+    notify: Start supervisor
+    when: ansible_os_family == 'RedHat'
 

@@ -1,0 +1,5 @@
+  - name: Copy supervisor init
+    template: >
+      src=supervisor.fedora
+      dest="/etc/systemd/system/supervisor.service"
+      mode=0755
