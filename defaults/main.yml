@@ -1,5 +1,6 @@
 ---
 install_pip: true
+install_init_script: true
 
 supervisor_name: supervisor
 supervisor_log_dir: /var/log/supervisor

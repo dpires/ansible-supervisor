@@ -3,3 +3,4 @@
       src=supervisor.sysv
       dest="/etc/init.d/supervisor"
       mode=0755
+    when: install_init_script == true

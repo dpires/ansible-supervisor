@@ -14,6 +14,7 @@ Role Variables
 --------------
 
  - `install_pip` Install pip dependency, defaults to `true`
+ - `install_init_script` Install SysV init script, defaults to `true`
  - `supervisor_name` The supervisor daemon name, defaults to `supervisord`
  - `supervisor_log_dir` The log directory, defaults to `/var/log/supervisor`
  - `supervisor_config_dir` The main config directory, defaults to `/etc/supervisor`
