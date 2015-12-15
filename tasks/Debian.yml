@@ -1,5 +1,5 @@
-  - name: Copy supervisor init
+  - name: Copy supervisor sysv configuration
     template: >
-      src=supervisor.init
+      src=supervisor.sysv
       dest="/etc/init.d/supervisor"
       mode=0755
